@@ -1,0 +1,98 @@
+= Name
+
+bitwise_string_ops = Bitwise operators for the String class
+
+= Installation
+
+  gem install kingpong-bitwise_string_ops --source http://gems.github.com
+
+  # in your code:
+  require 'rubygems'
+  require 'bitwise_string_ops'
+
+  # or in Rails' environment.rb:
+  gem "kingpong-bitwise_string_ops", :lib => "bitwise_string_ops"
+
+= Description
+
+This gem extends the String class to include the bitwise operators '|'
+(OR), '&' (AND), '^' (XOR) and '~' (NOT).  The semantics are as close to
+Perl's bitwise string operators as possible (see "perldoc perlop").
+
+The operation is applied to each successive byte (not necessarily
+character) in the source strings in parallel.  For example, the result
+of "AB" & "CD" is ("A" & "C") + ("B" & "D").
+
+If the operands to a binary bitwise op are strings of different sizes, ⎪
+and ^ ops act as though the shorter operand had additional zero bits on
+the right, while the & op acts as though the longer operand were
+truncated to the length of the shorter.  The granularity for such
+extension or truncation is one or more bytes. [source: perldoc perlop]
+
+For strings of the same length, nothing unexpected:
+
+  "r b " ^ " u y"   # "RUBY"
+  #
+  # 01110010 00100000 01100010 00100000 ^    # "r b " ^
+  # 00100000 01110101 00100000 01111001      # " u y"
+  # ======== ======== ======== ========
+  # 01010010 01010101 01000010 01011001      # "RUBY"
+
+OR operation expands to the larger of the two strings:
+
+  "RU" | "  by"     # "ruby"
+  #
+  # 01010010 01010101                   |    # "RU"
+  # 00100000 00100000 01100010 01111001      # "  by"
+  # ======== ======== ======== ========
+  # 01110010 01110101 01100010 01111001      # "ruby"
+
+XOR expands also:
+
+  "%:--!" ^ "woot"  # "RUBY!"
+  #
+  # 00100101 00111010 00101101 00101101 00100001 ^    # "%:--!"
+  # 01110111 01101111 01101111 01110100               # "woot"
+  # ======== ======== ======== ========
+  # 01010010 01010101 01000010 01011001 00100001"     # "RUBY!"
+
+AND truncates to the shorter of the two:
+
+  "ruby!" & '____'  # "ruby"
+  #
+  # 01110010 01110101 01100010 01111001 00100001 &    # "ruby!"
+  # 01011111 01011111 01011111 01011111               # "____"
+  # ======== ======== ======== ========
+  # 01110010 01110101 01100010 01111001               # "ruby"
+
+= Known Issues
+
+* Largely untested
+* Completely untested with non-string rhs operands
+
+= Author
+
+* Philip Garrett <philip at pastemagazine.com>
+
+= Copyright and License
+
+Copyright (c) 2009 Philip Garrett.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -1,5 +1,6 @@
 
-HERE = File.dirname(__FILE__)
+here = File.dirname(__FILE__)
 %w(ext lib bin test).each do |dir|
-  $LOAD_PATH.unshift "#{HERE}/../#{dir}"
+  path = "#{here}/../#{dir}"
+  $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 end

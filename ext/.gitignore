@@ -1,0 +1,5 @@
+Makefile
+bitwise.o
+bitwise_string_ops.bundle
+bitwise_string_ops.o
+bitwise_string_ops.dylib
