@@ -10,26 +10,22 @@ VALUE BitwiseStringOps = Qnil;
 void Init_bitwise_string_ops();
 
 // Prototypes for our methods
-VALUE method_string_bitwise_or(VALUE self, VALUE other);
-VALUE method_string_bitwise_xor(VALUE self, VALUE other);
-VALUE method_string_bitwise_and(VALUE self, VALUE other);
-VALUE method_string_bitwise_not(VALUE self);
+VALUE method_bit_or(VALUE self, VALUE other);
+VALUE method_bit_xor(VALUE self, VALUE other);
+VALUE method_bit_and(VALUE self, VALUE other);
+VALUE method_bit_not(VALUE self);
 
 // The initialization method for this module
 void Init_bitwise_string_ops()
 {
     BitwiseStringOps = rb_define_module("BitwiseStringOps");
-    rb_define_method(BitwiseStringOps, "string_bitwise_or",
-                     method_string_bitwise_or,  1);
-    rb_define_method(BitwiseStringOps, "string_bitwise_xor",
-                     method_string_bitwise_xor, 1);
-    rb_define_method(BitwiseStringOps, "string_bitwise_and",
-                     method_string_bitwise_and, 1);
-    rb_define_method(BitwiseStringOps, "string_bitwise_not",
-                     method_string_bitwise_not, 0);
+    rb_define_method(BitwiseStringOps, "bit_or",  method_bit_or,  1);
+    rb_define_method(BitwiseStringOps, "bit_xor", method_bit_xor, 1);
+    rb_define_method(BitwiseStringOps, "bit_and", method_bit_and, 1);
+    rb_define_method(BitwiseStringOps, "bit_not", method_bit_not, 0);
 }
 
-VALUE method_string_bitwise_or(VALUE self, VALUE other)
+VALUE method_bit_or(VALUE self, VALUE other)
 {
     VALUE left = StringValue(self), right = StringValue(other);
     VALUE dest = rb_str_new(NULL,
@@ -41,7 +37,7 @@ VALUE method_string_bitwise_or(VALUE self, VALUE other)
     return dest;
 }
 
-VALUE method_string_bitwise_xor(VALUE self, VALUE other)
+VALUE method_bit_xor(VALUE self, VALUE other)
 {
     VALUE left = StringValue(self), right = StringValue(other);
     VALUE dest = rb_str_new(NULL,
@@ -53,7 +49,7 @@ VALUE method_string_bitwise_xor(VALUE self, VALUE other)
     return dest;
 }
 
-VALUE method_string_bitwise_and(VALUE self, VALUE other)
+VALUE method_bit_and(VALUE self, VALUE other)
 {
     VALUE left = StringValue(self), right = StringValue(other);
     VALUE dest = rb_str_new(NULL,
@@ -65,7 +61,7 @@ VALUE method_string_bitwise_and(VALUE self, VALUE other)
     return dest;
 }
 
-VALUE method_string_bitwise_not(VALUE self)
+VALUE method_bit_not(VALUE self)
 {
     VALUE str = StringValue(self);
     VALUE dest = rb_str_new(NULL,

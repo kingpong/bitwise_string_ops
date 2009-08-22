@@ -13,8 +13,8 @@
 require 'bitwise_string_ops.so'
 class String
   include BitwiseStringOps
-  alias :| :string_bitwise_or
-  alias :^ :string_bitwise_xor
-  alias :& :string_bitwise_and
-  alias :~ :string_bitwise_not
+  alias :| :bit_or
+  alias :^ :bit_xor
+  alias :& :bit_and
+  alias :~ :bit_not
 end
