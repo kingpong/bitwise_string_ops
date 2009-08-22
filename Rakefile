@@ -2,8 +2,12 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new("bitwise_string_ops", "0.1.0") do |p|
+project = "bitwise_string_ops"
+version = "0.1.1"
+
+Echoe.new(project, version) do |p|
   p.description = "Bitwise operations for Ruby strings"
+  p.summary = "#{project} #{version}"
   p.url = "http://github.com/kingpong/bitwise_string_ops"
   p.author = "Philip Garrett"
   p.email = "philip@pastemagazine.com"
