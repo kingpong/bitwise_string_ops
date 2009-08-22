@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Philip Garrett"]
   s.date = %q{2009-08-22}
-  s.description = %q{Bitwise operations for Ruby strings, a la Perl}
+  s.description = %q{Bitwise operations for Ruby strings}
   s.email = %q{philip@pastemagazine.com}
   s.extensions = ["ext/extconf.rb"]
   s.extra_rdoc_files = ["CHANGELOG", "ext/bitwise.c", "ext/bitwise_string_ops.c", "ext/bitwise_string_ops.h", "ext/extconf.rb", "lib/bitwise_string_ops.rb", "README.rdoc"]
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "ext"]
   s.rubyforge_project = %q{bitwise_string_ops}
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{Bitwise operations for Ruby strings, a la Perl}
+  s.summary = %q{Bitwise operations for Ruby strings}
   s.test_files = ["test/test_helper.rb", "test/test_string_and.rb", "test/test_string_not.rb", "test/test_string_or.rb", "test/test_string_xor.rb"]
 
   if s.respond_to? :specification_version then
