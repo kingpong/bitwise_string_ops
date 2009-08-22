@@ -1,6 +1,6 @@
 = Name
 
-bitwise_string_ops = Bitwise operators for the String class
+bitwise_string_ops - Bitwise operators for the String class
 
 = Installation
 
