@@ -1,0 +1,41 @@
+commit 074c9142a5b66b146e70e185566931e285867d06
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 19:28:48 2009 -0400
+
+    updated gem summary to avoid warning.  now ignoring locally built gems
+
+commit 15eaea26144f53acb6115e69c61849fd6acc271f
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 19:18:42 2009 -0400
+
+    updated description
+
+commit 6564737f4bde3fc862536f2ca783f25d7f27e876
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 19:10:43 2009 -0400
+
+    fixed heading
+
+commit 87fa61f9253a8d43764ac52acd09583da8c39d26
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 19:04:45 2009 -0400
+
+    converted to gem. added readme and license spam.
+
+commit 6ec05ea0131d5b86c6af5b20a872cd266ce76a2a
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 17:00:01 2009 -0400
+
+    improved organization; added setup.rb
+
+commit bc3246fb8724510be668bd64b4769e712658042e
+Author: Philip Garrett <philip@philip.(none)>
+Date:   Sat Aug 22 15:51:01 2009 -0400
+
+    ignore build files
+
+commit 2c66ca95fb973a0029dd655ab3aaa5427ece778b
+Author: Philip Garrett <philip@philip.(none)>
+Date:   Sat Aug 22 15:42:23 2009 -0400
+
+    working, barely-tested bitwise string operations
