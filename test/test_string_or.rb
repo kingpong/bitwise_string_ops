@@ -24,6 +24,11 @@ class TestStringOr < Test::Unit::TestCase
     assert_equal "00" | "111", "111"
   end
   
+  def test_non_string
+    assert_equal "1"  | 1, "1"  | "1"
+    assert_equal "10" | 1, "10" | "1"
+  end
+  
   def test_truth_table
     assert_equal "0" | "0", "0"
     assert_equal "0" | "1", "1"

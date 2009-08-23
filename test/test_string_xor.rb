@@ -26,6 +26,11 @@ class TestStringXor < Test::Unit::TestCase
     assert_equal( (orig ^ mask) ^ mask, orig)
   end
   
+  def test_non_string
+    assert_equal "1"  ^ 1, "1"  ^ "1"
+    assert_equal "10" ^ 1, "10" ^ "1"
+  end
+  
   def test_overflow
     assert_equal "111" ^ "00",  "\001\0011"
     assert_equal "00"  ^ "111", "\001\0011"
