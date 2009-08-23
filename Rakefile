@@ -3,7 +3,7 @@ require 'rake'
 require 'echoe'
 
 project = "bitwise_string_ops"
-version = "0.1.3"
+version = "0.1.4"
 
 Echoe.new(project, version) do |p|
   p.description = "Bitwise operations for Ruby strings"

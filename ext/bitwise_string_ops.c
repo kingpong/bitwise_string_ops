@@ -23,34 +23,27 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// Include the Ruby headers and goodies
 #include "ruby.h"
 #include "bitwise_string_ops.h"
 
-// Defining a space for information and references about the module to be stored internally
-VALUE BitwiseStringOps = Qnil;
 static ID ToString;
+static VALUE to_s(VALUE o);
 
-// Prototype for the initialization method - Ruby calls this, not you
+/* callback for module init */
 void Init_bitwise_string_ops();
 
-// Prototypes for our methods
 VALUE method_bit_or(VALUE self, VALUE other);
 VALUE method_bit_xor(VALUE self, VALUE other);
 VALUE method_bit_and(VALUE self, VALUE other);
 VALUE method_bit_not(VALUE self);
 
-static VALUE to_s(VALUE o);
-
-// The initialization method for this module
 void Init_bitwise_string_ops()
 {
-    BitwiseStringOps = rb_define_module("BitwiseStringOps");
     ToString = rb_intern("to_s");
-    rb_define_method(BitwiseStringOps, "|", method_bit_or,  1);
-    rb_define_method(BitwiseStringOps, "^", method_bit_xor, 1);
-    rb_define_method(BitwiseStringOps, "&", method_bit_and, 1);
-    rb_define_method(BitwiseStringOps, "~", method_bit_not, 0);
+    rb_define_method(rb_cString, "|", method_bit_or,  1);
+    rb_define_method(rb_cString, "^", method_bit_xor, 1);
+    rb_define_method(rb_cString, "&", method_bit_and, 1);
+    rb_define_method(rb_cString, "~", method_bit_not, 0);
 }
 
 static VALUE to_s(VALUE o)

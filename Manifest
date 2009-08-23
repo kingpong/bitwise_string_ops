@@ -5,14 +5,15 @@ ext/bitwise_string_ops.c
 ext/bitwise_string_ops.h
 ext/extconf.rb
 init.rb
-lib/bitwise_string_ops.rb
 Manifest
 Rakefile
 README.rdoc
 setup.rb
 test/test.rb
 test/test_helper.rb
+test/test_perl_equivalence.rb
 test/test_string_and.rb
 test/test_string_not.rb
 test/test_string_or.rb
 test/test_string_xor.rb
+test/testcases.pl

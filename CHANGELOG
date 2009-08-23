@@ -1,3 +1,57 @@
+commit 678935a5904007ccd44178f961c5ab525dba4811
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sun Aug 23 04:18:23 2009 -0400
+
+    updated documentation
+
+commit 6d5bf6876529fc5c515d3ba108b2e1b6b4fd6184
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sun Aug 23 03:12:56 2009 -0400
+
+    expanded tabs
+
+commit a3d7746d9f09d42593fa9446c4fb2bead2894d29
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sun Aug 23 03:02:40 2009 -0400
+
+    handle non-strings
+
+commit 200fcb33e1479246c6229998de42ad3c27cdf00e
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sun Aug 23 01:42:07 2009 -0400
+
+    added test cases
+
+commit 3f03b37a4deb5a578fe991b1e09f74143f74fc45
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 23:34:32 2009 -0400
+
+    removed intermediate method names for the operators
+
+commit 383ce0eca96503c6729eab72d63aad2ae84eee85
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 23:27:25 2009 -0400
+
+    ignore doc dir
+
+commit 3f94a2438be1c3da43478900d4fa2a07b50181e9
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 23:27:03 2009 -0400
+
+    fixed unicode issue
+
+commit 33ea54dfb0624905bc94ea384b58b9fe87e08cc6
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 20:42:14 2009 -0400
+
+    increment version num for github gem builder
+
+commit 33f1b27e41bc395637645b89ea37f7362094c8ab
+Author: kingpong <philip@pastemagazine.com>
+Date:   Sat Aug 22 19:41:33 2009 -0400
+
+    include changelog and manifest in version control
+
 commit 074c9142a5b66b146e70e185566931e285867d06
 Author: kingpong <philip@pastemagazine.com>
 Date:   Sat Aug 22 19:28:48 2009 -0400
