@@ -43,10 +43,10 @@ VALUE method_bit_not(VALUE self);
 void Init_bitwise_string_ops()
 {
     BitwiseStringOps = rb_define_module("BitwiseStringOps");
-    rb_define_method(BitwiseStringOps, "bit_or",  method_bit_or,  1);
-    rb_define_method(BitwiseStringOps, "bit_xor", method_bit_xor, 1);
-    rb_define_method(BitwiseStringOps, "bit_and", method_bit_and, 1);
-    rb_define_method(BitwiseStringOps, "bit_not", method_bit_not, 0);
+    rb_define_method(BitwiseStringOps, "|", method_bit_or,  1);
+    rb_define_method(BitwiseStringOps, "^", method_bit_xor, 1);
+    rb_define_method(BitwiseStringOps, "&", method_bit_and, 1);
+    rb_define_method(BitwiseStringOps, "~", method_bit_not, 0);
 }
 
 VALUE method_bit_or(VALUE self, VALUE other)
