@@ -23,7 +23,7 @@ The operation is applied to each successive byte (not necessarily
 character) in the source strings in parallel.  For example, the result
 of "AB" & "CD" is ("A" & "C") + ("B" & "D").
 
-If the operands to a binary bitwise op are strings of different sizes, ⎪
+If the operands to a binary bitwise op are strings of different sizes, |
 and ^ ops act as though the shorter operand had additional zero bits on
 the right, while the & op acts as though the longer operand were
 truncated to the length of the shorter.  The granularity for such
