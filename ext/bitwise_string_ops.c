@@ -46,7 +46,7 @@ static VALUE to_s(VALUE o);
 void Init_bitwise_string_ops()
 {
     BitwiseStringOps = rb_define_module("BitwiseStringOps");
-	ToString = rb_intern("to_s");
+    ToString = rb_intern("to_s");
     rb_define_method(BitwiseStringOps, "|", method_bit_or,  1);
     rb_define_method(BitwiseStringOps, "^", method_bit_xor, 1);
     rb_define_method(BitwiseStringOps, "&", method_bit_and, 1);
@@ -55,16 +55,16 @@ void Init_bitwise_string_ops()
 
 static VALUE to_s(VALUE o)
 {
-	return rb_obj_is_kind_of(o,rb_cString)
-		? o : rb_funcall(o, ToString, 0);
+    return rb_obj_is_kind_of(o,rb_cString)
+        ? o : rb_funcall(o, ToString, 0);
 }
 
 VALUE method_bit_or(VALUE self, VALUE other)
 {
-	VALUE left, right, right_s, dest;
-	left = StringValue(self);
-	right_s = to_s(other);
-	right = StringValue(right_s);
+    VALUE left, right, right_s, dest;
+    left = StringValue(self);
+    right_s = to_s(other);
+    right = StringValue(right_s);
     dest = rb_str_new(NULL, string_bitwise_or_result_len(RSTRING(left)->len,
                                                          RSTRING(right)->len));
     string_bitwise_or(RSTRING(left)->ptr, RSTRING(left)->len,
@@ -75,10 +75,10 @@ VALUE method_bit_or(VALUE self, VALUE other)
 
 VALUE method_bit_xor(VALUE self, VALUE other)
 {
-	VALUE left, right, right_s, dest;
-	left = StringValue(self);
-	right_s = to_s(other);
-	right = StringValue(right_s);
+    VALUE left, right, right_s, dest;
+    left = StringValue(self);
+    right_s = to_s(other);
+    right = StringValue(right_s);
     dest = rb_str_new(NULL, string_bitwise_xor_result_len(RSTRING(left)->len,
                                                           RSTRING(right)->len));
     string_bitwise_xor(RSTRING(left)->ptr, RSTRING(left)->len,
@@ -89,10 +89,10 @@ VALUE method_bit_xor(VALUE self, VALUE other)
 
 VALUE method_bit_and(VALUE self, VALUE other)
 {
-	VALUE left, right, right_s, dest;
-	left = StringValue(self);
-	right_s = to_s(other);
-	right = StringValue(right_s);
+    VALUE left, right, right_s, dest;
+    left = StringValue(self);
+    right_s = to_s(other);
+    right = StringValue(right_s);
     dest = rb_str_new(NULL, string_bitwise_and_result_len(RSTRING(left)->len,
                                                           RSTRING(right)->len));
     string_bitwise_and(RSTRING(left)->ptr, RSTRING(left)->len,
