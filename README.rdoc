@@ -67,7 +67,6 @@ AND truncates to the shorter of the two:
 
 = Known Issues
 
-* Largely untested
 * Completely untested with non-string rhs operands
 
 = Author
