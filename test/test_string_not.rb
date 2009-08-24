@@ -6,7 +6,7 @@ require 'bitwise_string_ops'
 class TestStringNot < Test::Unit::TestCase
 
   def test_empty
-    assert_equal "" & "", ""
+    assert_equal ~"", ""
   end
   
   def test_single
